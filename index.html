@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#2196F3">
+    <title>WebStore</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Roboto:wght@400;500;700;900&display=swap"
+            rel="stylesheet">
+    <!-- Styles link-->
+    <link rel="stylesheet" href="./scss/style.css">
+</head>
+<body>
+<!-- Header -->
+<header>
+    <div class="wrapper-container header">
+        <nav class="header-menu">
+            <a href="javascript:void(0)" class="header-logo"><span>Web</span>Store</a>
+            <ul class="header-menu-list">
+                <li class="header-menu-item">
+                    <a href="javascript:void(0)" class="header-menu-link">Home</a>
+                </li>
+                <li class="header-menu-item active">
+                    <a href="javascript:void(0)" class="header-menu-link">Products</a>
+                </li>
+                <li class="header-menu-item">
+                    <a href="javascript:void(0)" class="header-menu-link">Contacts</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="wrapper-cart">
+            <a href="javascript:void(0)" class="header-cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- Main -->
+<main>
+    <div class="section">
+        <div class="web-store">
+            <div class="wrapper-container">
+                <div class="wrapper-web-store">
+                    <div class="left-side">
+                        <div class="wrapper-filters">
+                            <div class="wrapper-category">
+                                <div class="title-category">
+                                    <h2>Category</h2>
+                                </div>
+                                <div class="wrapper-checkboxes">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="monitors">
+                                        <label class="custom-control-label" for="monitors">Monitors</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="laptops">
+                                        <label class="custom-control-label" for="laptops">Laptops</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="videoCards">
+                                        <label class="custom-control-label" for="videoCards">Video cards</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="gamingKeyboards">
+                                        <label class="custom-control-label" for="gamingKeyboards">Gaming
+                                            keyboards</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wrapper-brand">
+                                <div class="title-brand">
+                                    <h2>Brand</h2>
+                                </div>
+                                <div class="wrapper-checkboxes">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="asus">
+                                        <label class="custom-control-label" for="asus">Asus</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="apple">
+                                        <label class="custom-control-label" for="apple">Apple</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="acer">
+                                        <label class="custom-control-label" for="acer">Acer</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="dell">
+                                        <label class="custom-control-label" for="dell">Dell</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wrapper-clear-filters">
+                                <button class="clear-btn">Clear all filters</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-side">
+                        <div class="wrapper-products-search">
+                            <input type="search" placeholder="Search...">
+                            <button class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                        <div id="onlineStorePage">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+
+</footer>
+
+<!-- Fontawesome -->
+<script src="https://kit.fontawesome.com/d8f94193bc.js" crossorigin="anonymous"></script>
+<!-- Script link -->
+<script type="module" src="./js/index.js"></script>
+<script type="module">
+    import OnlineStorePage from "./js/index.js";
+
+    const onlineStore = new OnlineStorePage();
+
+    const onlineStoreRoot = document.querySelector('#onlineStorePage');
+    onlineStoreRoot.append(onlineStore.element);
+</script>
+</body>
+</html>
