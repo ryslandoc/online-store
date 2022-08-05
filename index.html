@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="./scss/style.css">
 </head>
 <body>
+
 <!-- Header -->
 <header>
     <div class="wrapper-container header">
@@ -35,17 +36,18 @@
                 </li>
             </ul>
         </nav>
-        <div class="wrapper-cart">
-            <a href="javascript:void(0)" class="header-cart">
+        <div class="wrapper-cart" data-element="openCart">
+            <button href="javascript:void(0)" class="header-cart">
                 <i class="fa-solid fa-cart-shopping"></i>
-            </a>
+                <span data-element="cartQuantity"></span>
+            </button>
         </div>
     </div>
 </header>
 
 <!-- Main -->
-<main>
-    <div class="section">
+<main id="root">
+    <section class="section">
         <div class="web-store">
             <div class="wrapper-container">
                 <div class="wrapper-web-store">
@@ -104,9 +106,11 @@
                         </div>
                     </div>
                     <div class="right-side">
-                        <div class="wrapper-products-search">
-                            <input type="search" placeholder="Search...">
-                            <button class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <div class="wrapper-products-search" data-element="searchBox">
+                            <label class="searchBox">
+                                <input id="search-input" type="text" placeholder="Search..." data-element="search">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </label>
                         </div>
                         <div id="onlineStorePage">
 
@@ -115,7 +119,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Modal -->
+    <div></div>
 </main>
 
 <!-- Footer -->
@@ -127,6 +134,7 @@
 <script src="https://kit.fontawesome.com/d8f94193bc.js" crossorigin="anonymous"></script>
 <!-- Script link -->
 <script type="module" src="./js/index.js"></script>
+<script src="js/components/cart.js"></script>
 <script type="module">
     import OnlineStorePage from "./js/index.js";
 

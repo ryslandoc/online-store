@@ -1,7 +1,9 @@
 export default class Card {
-    constructor(props1) {
-        this.state = props1;
+    constructor(productData) {
+        this.state = productData;
         this.render();
+
+        this.addEventListeners();
     }
 
     getTemplate() {
@@ -30,7 +32,7 @@ export default class Card {
                 </div>
             </div>
             <div class="wrapper-product-button">
-                <button>Add To Cart</button>
+                <button data-element="addToCart">Add To Cart</button>
             </div>
         </div>
         `
@@ -40,5 +42,19 @@ export default class Card {
         const wrapper = document.createElement('div');
         wrapper.innerHTML = this.getTemplate();
         this.element = wrapper.firstElementChild;
+    }
+
+    addEventListeners () {
+        const addToCartBtn = this.element.querySelector('[data-element="addToCart"]')
+        addToCartBtn.addEventListener('click', event => {
+            this.dispatchAddToCartEvent(this.state)
+        })
+    }
+
+    dispatchAddToCartEvent (productData) {
+        this.element.dispatchEvent(new CustomEvent('add-to-cart', {
+            detail: productData,
+            bubbles: true
+        }))
     }
 }

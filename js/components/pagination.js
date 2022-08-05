@@ -70,7 +70,7 @@ export default class Pagination {
     }
 
     prevPage() {
-        const prevPageIndex = this.activePageIndex -1;
+        const prevPageIndex = this.activePageIndex - 1;
         this.setPage(prevPageIndex);
     }
 
@@ -89,8 +89,9 @@ export default class Pagination {
 
         pagination.addEventListener('click', event => {
             const pageItem = event.target.closest(`[data-element="page-item"]`);
-            if(!pageItem) return;
+            if (!pageItem) return;
 
+            // const {pageIndex} = pageItem.dataset;
             const pageIndex = pageItem.dataset.pageIndex;
             this.setPage(parseInt(pageIndex, 10));
         });
